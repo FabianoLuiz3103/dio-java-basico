@@ -103,5 +103,26 @@ public class Operadores {
 
         simNao = numeroUm <= numeroDois;
         System.out.println("N1 é menor ou igual a N2? " + simNao);
+
+        /*
+        Operadores lógicos
+        &&, ||
+         */
+        boolean condicaoUm = false;
+        boolean condicaoDois = false;
+
+        if(condicaoUm && condicaoDois){
+            System.out.println("As duas condições são verdadeiras");
+        }else{
+            System.out.println("Uma ou as duas codições são falsas");
+        }
+
+        System.out.println("fim &&");
+
+        if(condicaoUm || condicaoDois){
+            System.out.println("Uma ou as duas condições são verdadeiras");
+        }else{
+            System.out.println("As duas condições são falsas");
+        }
     }
 }
