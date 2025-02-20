@@ -69,5 +69,13 @@ public class Operadores {
         System.out.println(++contador); //da 2 pq aqui ele incrementa primeiro e depois imprime
         // no primeiro sys ele imprime 0 e atualiza o valor para 1, no segundo ele atualiza o valor para 2 e imprime
 
+        /*
+        Operador ternário:
+        ?:
+         */
+        int a = 5, b = 8;
+        System.out.println("a é maior do que b?" +  ((a > b) ? " sim " : " não "));
+        String resultado = a==b ? "verdadeiro":"falso";
+        System.out.println("a == b ? " + resultado);
     }
 }
