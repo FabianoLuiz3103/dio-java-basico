@@ -46,5 +46,28 @@ public class Operadores {
         concatenacao = "1"+(1+1+1);
         System.out.println("5º resultado: " + concatenacao);
 
+        /*
+        Operadores unários:
+        +, -, ++, --, !
+         */
+        int numero = 5; // é o mesmo que +5
+        System.out.println(numero);
+        numero = -numero; // ficou -5 -(+5)
+        System.out.println(numero);
+        numero = +numero; // ficou -5 ainda +(-5)
+        System.out.println(numero);
+        numero = numero*-1; // ficou +5 -5*-1
+        System.out.println(numero);
+
+        boolean temGente = false;
+        System.out.println(temGente);
+        temGente = !temGente;
+        System.out.println(temGente);
+
+        int contador = 0;
+        System.out.println(contador++); // da 0 pq aqui ele imprime primeiro e depois incrementa
+        System.out.println(++contador); //da 2 pq aqui ele incrementa primeiro e depois imprime
+        // no primeiro sys ele imprime 0 e atualiza o valor para 1, no segundo ele atualiza o valor para 2 e imprime
+
     }
 }
