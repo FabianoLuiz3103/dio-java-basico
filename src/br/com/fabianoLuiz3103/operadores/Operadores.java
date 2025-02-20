@@ -77,5 +77,31 @@ public class Operadores {
         System.out.println("a é maior do que b?" +  ((a > b) ? " sim " : " não "));
         String resultado = a==b ? "verdadeiro":"falso";
         System.out.println("a == b ? " + resultado);
+
+        /*
+        Operadores relacionais:
+        ==, !=, >, >=, <, <=
+         */
+        int numeroUm = 1;
+        int numeroDois = 2;
+        boolean simNao;
+
+        simNao = numeroUm == numeroDois;
+        System.out.println("N1 é igual a N2? " + simNao);
+
+         simNao = numeroUm != numeroDois;
+        System.out.println("N1 é diferente de N2? " + simNao);
+
+        simNao = numeroUm > numeroDois;
+        System.out.println("N1 é maior que N2? " + simNao);
+
+        simNao = numeroUm >= numeroDois;
+        System.out.println("N1 é maior ou igual a N2? " + simNao);
+
+        simNao = numeroUm < numeroDois;
+        System.out.println("N1 é menor que N2? " + simNao);
+
+        simNao = numeroUm <= numeroDois;
+        System.out.println("N1 é menor ou igual a N2? " + simNao);
     }
 }
