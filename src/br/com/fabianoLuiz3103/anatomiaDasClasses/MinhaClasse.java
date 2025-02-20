@@ -17,6 +17,10 @@ public class MinhaClasse {
         final String CODIGO_FILIAL01 = "009001";
        // CODIGO_FILIAL01 = "00012"; --> Não é possível porque é constante
 
+        String primeiroNome = "Fabiano";
+        String segundoNome = "Luiz Santos";
+        System.out.println(nomeCompleto(primeiroNome, segundoNome));
+
     }
 
     /*
@@ -26,6 +30,10 @@ public class MinhaClasse {
      */
     public int somar(int numeroUm, int numeroDois){
         return numeroUm+numeroDois;
+    }
+
+    public static String nomeCompleto(String primeiroNome, String segundoNome){
+        return primeiroNome.concat(" ").concat(segundoNome);
     }
 
 }
