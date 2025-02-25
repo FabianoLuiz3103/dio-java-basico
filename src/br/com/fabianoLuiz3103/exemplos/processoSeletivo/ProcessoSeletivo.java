@@ -1,7 +1,6 @@
 package br.com.fabianoLuiz3103.exemplos.processoSeletivo;
 
-import java.util.InputMismatchException;
-import java.util.Scanner;
+import java.util.Random;
 
 public class ProcessoSeletivo {
 
@@ -12,24 +11,8 @@ public class ProcessoSeletivo {
 
     public static void main(String[] args) {
 
-        Scanner scanner = new Scanner(System.in);
-        double salarioPretendido = receberSalarioPretendido(scanner);
-        analisarCandidato(salarioPretendido);
-        scanner.close();
-    }
-
-    private static double receberSalarioPretendido(Scanner scanner){
-        while (true){
-            try{
-                System.out.println("\n\tOlá candidato, informe sua pretenção salarial: ");
-                double valor = scanner.nextDouble();
-                if(valor > 0){return valor;}
-                System.out.println("\n\tERRO! O valor não pode ser negativo. ");
-            }catch (InputMismatchException e){
-                System.out.println("\n\tERRO! O valor deve ser do tipo numérico! ");
-                scanner.nextLine();
-            }
-        }
+        String[] candidatosSelecionados = selecionarCandidatos();
+        exibirSelecionados(candidatosSelecionados);
     }
 
     private static void analisarCandidato(double salarioPretendido){
@@ -40,5 +23,42 @@ public class ProcessoSeletivo {
         }else{
             System.out.println(PRETENSAO_MAIOR);
         }
+    }
+
+    private static double gerarSalarioPretendido(){
+        Random r = new Random();
+        return r.nextDouble(1800, 2200);
+    }
+
+    private static String[] pegarCandidatos(){
+        return new String[]{"Fabiano", "Yolanda", "Carlos", "João", "Miguel", "Manoela", "Ricardo", "Marcelo", "Ezequiel",
+        "Renato", "Erika", "Fernanda", "Sabrina", "Joana", "Marina", "Marlene", "Márcia", "Yoni", "Gustavo O."};
+    }
+
+    private static void exibirSelecionados(String[] selecionados){
+        for(String s: selecionados){
+            System.out.println(s);
+        }
+    }
+
+    private static String[] selecionarCandidatos(){
+        String[] candidatos = pegarCandidatos();
+        String[] candidatosSelecionados = new String[5];
+        int quantidadeSelecionados = 0;
+        for (String c : candidatos) {
+            double salarioPretendido = gerarSalarioPretendido();
+            exibirPropostaDoCandidato(c, salarioPretendido);
+            if (salarioPretendido <= SALARIO_BASE) {
+                candidatosSelecionados[quantidadeSelecionados] = c + " sal. pretendido R$" + salarioPretendido;
+                quantidadeSelecionados++;
+            }
+            if (quantidadeSelecionados == 5)
+                break;
+        }
+        return candidatosSelecionados;
+    }
+    private static void exibirPropostaDoCandidato(String cadidato, double salarioPretendido){
+        System.out.println("\tO candidato " + cadidato + " tem como pretensão salarial o valor de R$" + salarioPretendido
+                + (salarioPretendido<=SALARIO_BASE?" -----> CANDIDATO SELECIONADO! " : "."));
     }
 }
