@@ -14,6 +14,7 @@ public class ProcessoSeletivo {
 
         Scanner scanner = new Scanner(System.in);
         double salarioPretendido = receberSalarioPretendido(scanner);
+        analisarCandidato(salarioPretendido);
         scanner.close();
     }
 
@@ -31,5 +32,13 @@ public class ProcessoSeletivo {
         }
     }
 
-
+    private static void analisarCandidato(double salarioPretendido){
+        if(salarioPretendido < SALARIO_BASE){
+            System.out.println(PRETENSAO_MENOR);
+        }else if(salarioPretendido == SALARIO_BASE){
+            System.out.println(PRETENSAO_IGUAL);
+        }else{
+            System.out.println(PRETENSAO_MAIOR);
+        }
+    }
 }
