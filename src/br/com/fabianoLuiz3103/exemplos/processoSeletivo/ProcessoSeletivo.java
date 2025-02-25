@@ -13,6 +13,7 @@ public class ProcessoSeletivo {
 
         String[] candidatosSelecionados = selecionarCandidatos();
         exibirSelecionados(candidatosSelecionados);
+        ligarParaCandidatosSelecionados(candidatosSelecionados);
     }
 
     private static void analisarCandidato(double salarioPretendido){
@@ -57,8 +58,37 @@ public class ProcessoSeletivo {
         }
         return candidatosSelecionados;
     }
+
     private static void exibirPropostaDoCandidato(String cadidato, double salarioPretendido){
         System.out.println("\tO candidato " + cadidato + " tem como pretensão salarial o valor de R$" + salarioPretendido
                 + (salarioPretendido<=SALARIO_BASE?" -----> CANDIDATO SELECIONADO! " : "."));
+    }
+
+    private static void ligarParaCandidatosSelecionados(String[] selecionados) {
+        boolean atendeu;
+        boolean continuarTocando = true;
+        int quantidadeToques;
+        for(String s: selecionados){
+            quantidadeToques =1;
+           System.out.println("\nDiscando para o candidato " + s);
+
+           do {
+               atendeu = atendeu();
+               continuarTocando = !atendeu;
+               if(continuarTocando){
+                   quantidadeToques++;
+               }
+
+           }while (continuarTocando && quantidadeToques <=3);
+
+           if(atendeu){
+               System.out.println("- CONSEGUIMOS CONTATO COM " + s + " APÓS " + quantidadeToques + " TENTATIVAS");
+           }else {
+               System.out.println("- NÃO CONSEGUIMOS CONTATO COM " +s );
+           }
+       }
+    }
+    private static boolean atendeu(){
+        return new Random().nextInt(3)==1;
     }
 }
