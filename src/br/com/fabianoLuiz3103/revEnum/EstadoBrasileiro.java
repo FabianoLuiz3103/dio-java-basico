@@ -24,4 +24,8 @@ public enum EstadoBrasileiro {
     public String getNome() {
         return nome;
     }
+
+    public String getNomeMaiusculo(){
+        return nome.toUpperCase();
+    }
 }
