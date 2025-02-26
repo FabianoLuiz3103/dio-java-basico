@@ -9,5 +9,10 @@ public class Main {
 
         estado = EstadoBrasileiro.BAHIA;//referência estado apontando para o objeto BAHIA
         System.out.println(estado.getNome() + " - " + estado.getSigla());
+
+        System.out.println("\nESTADOS:");
+        for (EstadoBrasileiro eb : EstadoBrasileiro.values()){
+            System.out.println("- " + eb.getNomeMaiusculo());
+        }
     }
 }
