@@ -2,11 +2,18 @@ package br.com.fabianoLuiz3103.oo.servicoMensagem.model;
 
 public class MSNMessenger {
 
-    public void enviarMensagem(){}
+    public void enviarMensagem(){
+        validarConectadoInternet();
+        System.out.println("Enviando mensagem");
+        salvarHistoricoMensagem();
+    }
 
-    public void receberMensagem(){}
+    public void receberMensagem(){
+        System.out.println("Recebendo mensagem");
+        salvarHistoricoMensagem();
+    }
 
-    public void validarConectadoInternet(){}
+    private void validarConectadoInternet(){}
 
-    public void salvarHistoricoMensagem(){}
+    private void salvarHistoricoMensagem(){}
 }
