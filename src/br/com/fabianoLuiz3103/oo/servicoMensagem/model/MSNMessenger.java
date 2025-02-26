@@ -4,6 +4,7 @@ public class MSNMessenger extends ServicoDeMensagem{
 
     @Override
     public void enviarMensagem() {
+        super.validarConectadoInternet();
         System.out.println("Enviando mensagem pelo MSN");
     }
 
