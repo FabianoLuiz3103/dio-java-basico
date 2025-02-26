@@ -1,19 +1,9 @@
 package br.com.fabianoLuiz3103.oo.servicoMensagem.model;
 
-public class ServicoDeMensagem {
+public abstract class ServicoDeMensagem {
 
-    public void enviarMensagem(){
-        validarConectadoInternet();
-        System.out.println("Enviando mensagem");
-        salvarHistoricoMensagem();
-    }
+    public abstract void enviarMensagem();
 
-    public void receberMensagem(){
-        System.out.println("Recebendo mensagem");
-        salvarHistoricoMensagem();
-    }
+    public abstract void receberMensagem();
 
-    private void validarConectadoInternet(){}
-
-    private void salvarHistoricoMensagem(){}
 }
