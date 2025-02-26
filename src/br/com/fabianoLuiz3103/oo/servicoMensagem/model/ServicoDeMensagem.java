@@ -6,4 +6,8 @@ public abstract class ServicoDeMensagem {
 
     public abstract void receberMensagem();
 
+    protected void validarConectadoInternet(){
+
+    }
+
 }
